@@ -1,11 +1,19 @@
 #include <stdio.h>
-#define CHUNK 200
+#include <unistd.h>
+#include <dirent.h>
+#define CHUNK 255
+
 int main() {
-  char command[CHUNK];
+  int system(const char *command);
+  
+  char input[CHUNK];
   while(1) {
     printf(">");
-    scanf("%s", command);
-    printf("Input: %s",command);
+    scanf("%s", input);
+    printf("Input: %s",input);
     printf("\n");
+    
+    // Execute command
+    system(input);
   }
 }
