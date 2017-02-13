@@ -15,7 +15,7 @@
 
 extern char **environ;
 
-int main() {
+int main(int argc, char *argv[]) {
   // Function to run command
   // int system(const char *command);
   // Variable to read input
@@ -55,6 +55,16 @@ int main() {
         i++;
       }
 
+      // set env
+      char shellPath[MAX_LENGTH];
+      getcwd(shellPath, MAX_LENGTH);
+      strcat(shellPath, "/");
+      strcat(shellPath, argv[0]);
+      int envReturn = setenv("SHELL_PATH", shellPath, 1); // will overwrite the existing value, if exists
+      if(envReturn == -1)
+      {
+        perror("setenv error");
+      }
       // Execute command
       // system(input);
       int execReturn = execvp(argsv[0], argsv);

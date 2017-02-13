@@ -1,9 +1,9 @@
 /*
   Name: Lim Jing Rong
   Matric: A0114395E
-  
-  Name: Leo
-  Matric: 
+
+  Name: Leonardo Sjahputra
+  Matric: A0114088H
 */
 
 #include <stdio.h>
